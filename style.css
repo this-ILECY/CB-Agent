@@ -39,6 +39,7 @@ body,
 .main-page {
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .main-page {
@@ -73,7 +74,8 @@ body,
     line-height: normal;
 }
 
-.see {
+.see,
+.see2 {
     fill: var(--white, #FFF);
     background-color: var(--main-green, #007D3D);
     padding: 10px;
@@ -294,7 +296,9 @@ body,
 }
 
 .ability-point>input,
-.score-point>input {
+.score-point>input,
+.score>input,
+.score2>input {
     color: var(--main-green, #007D3D);
     font-family: Inter;
     font-size: 15px;
@@ -311,9 +315,86 @@ body,
     width: 70%;
 }
 
+.score>input,
+.score2>input{
+    font-size: 20px;
+}
+
+.score,.score2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cool-down,
 .remains {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cb-modal {
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    background: #00000050;
+    z-index: 7;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cb-modal>.modal-box {
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E7F0BF;
+    height: 20%;
+    top: 40%;
+    width: 80%;
+    right: 10%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.response {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.response .no,
+.question {
+    color: var(--main-green, #007D3D);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+
+.response .yes {
+    background-color: var(--main-green, #007D3D);
+    color: white;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.bluring {
+    background-color: #007D3D;
+}
+
+.disable {
+    background-color: gray;
+    color: rgb(208, 208, 208);
+    ;
 }

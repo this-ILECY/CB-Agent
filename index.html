@@ -21,7 +21,15 @@
                         fill="#007D3D" />
                 </svg>
             </span>
-            <span class="turn">
+            <span onclick="save()" class="save">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M429.3 141.3l-90.51-90.51C326.7 38.74310.5 32 293.5 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V186.5C448 169.5 441.3 153.3 429.3 141.3zM80 48h213.5C297.1 48 300.6 48.48 304 49.25V152c0 13.23-10.78 24-24 24h-176C90.78 176 80 165.2 80 152V48zM432 416c0 26.47-21.53 48-48 48H64c-26.47 0-48-21.53-48-48V96c0-26.47 21.53-48 48-48v104C64 174.1 81.94 192 104 192h176C302.1 192 320 174.1 320 152V55.98c2.643 1.758 5.137 3.783 7.432 6.078l90.51 90.51C427 161.6 432 173.7 432 186.5V416zM224 240c-48.53 0-88 39.47-88 88S175.5 416 224 416s88-39.47 88-88S272.5 240 224 240zM224 400c-39.69 0-72-32.3-72-72S184.3 256 224 256s72 32.3 72 72S263.7 400 224 400z"
+                        fill="#007D3D" />
+                </svg>
+            </span>
+            <span onclick="changeTurn()" class="turn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="50" viewBox="0 0 32 50" fill="none">
                     <g clip-path="url(#clip0_6_11)">
                         <path
@@ -38,11 +46,18 @@
         </div>
         <div class="player-1">
             <span class="player-name">Amirhosein</span>
-            <span class="score">250</span>
-            <button class="see btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+            <span class="score"> <input type="text" name="" value="0" id=""> </span>
+            <button onclick="bluring()" class="see">
+                <svg class="cansee d-none" xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18"
+                    fill="none">
                     <path
                         d="M11.7471 1.875C9.2002 1.875 7.10645 3.03125 5.50098 4.51953C3.99707 5.91797 2.95801 7.57812 2.42676 8.75C2.95801 9.92188 3.99707 11.582 5.49707 12.9805C7.10645 14.4687 9.2002 15.625 11.7471 15.625C14.2939 15.625 16.3877 14.4687 17.9932 12.9805C19.4971 11.582 20.5361 9.92188 21.0674 8.75C20.5361 7.57812 19.4971 5.91797 17.9971 4.51953C16.3877 3.03125 14.2939 1.875 11.7471 1.875ZM4.22363 3.14844C6.06348 1.4375 8.59082 0 11.7471 0C14.9033 0 17.4307 1.4375 19.2705 3.14844C21.0986 4.84766 22.3213 6.875 22.9033 8.26953C23.0322 8.57812 23.0322 8.92187 22.9033 9.23047C22.3213 10.625 21.0986 12.6562 19.2705 14.3516C17.4307 16.0625 14.9033 17.5 11.7471 17.5C8.59082 17.5 6.06348 16.0625 4.22363 14.3516C2.39551 12.6562 1.17285 10.625 0.594727 9.23047C0.46582 8.92187 0.46582 8.57812 0.594727 8.26953C1.17285 6.875 2.39551 4.84375 4.22363 3.14844ZM11.7471 11.875C13.4736 11.875 14.8721 10.4766 14.8721 8.75C14.8721 7.02344 13.4736 5.625 11.7471 5.625C11.7197 5.625 11.6963 5.625 11.6689 5.625C11.7197 5.82422 11.7471 6.03516 11.7471 6.25C11.7471 7.62891 10.626 8.75 9.24707 8.75C9.03223 8.75 8.82129 8.72266 8.62207 8.67188C8.62207 8.69922 8.62207 8.72266 8.62207 8.75C8.62207 10.4766 10.0205 11.875 11.7471 11.875ZM11.7471 3.75C13.0732 3.75 14.3449 4.27678 15.2826 5.21447C16.2203 6.15215 16.7471 7.42392 16.7471 8.75C16.7471 10.0761 16.2203 11.3479 15.2826 12.2855C14.3449 13.2232 13.0732 13.75 11.7471 13.75C10.421 13.75 9.14922 13.2232 8.21154 12.2855C7.27385 11.3479 6.74707 10.0761 6.74707 8.75C6.74707 7.42392 7.27385 6.15215 8.21154 5.21447C9.14922 4.27678 10.421 3.75 11.7471 3.75Z"
+                        fill="white" />
+                </svg>
+                <svg class="cannotsee" xmlns="http://www.w3.org/2000/svg" width="23" height="18" fill="none"
+                    viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zm151 118.3C226 97.7 269.5 80 320 80c65.2 0 118.8 29.6 159.9 67.7C518.4 183.5 545 226 558.6 256c-12.6 28-36.6 66.8-70.9 100.9l-53.8-42.2c9.1-17.6 14.2-37.5 14.2-58.7c0-70.7-57.3-128-128-128c-32.2 0-61.7 11.9-84.2 31.5l-46.1-36.1zM394.9 284.2l-81.5-63.9c4.2-8.5 6.6-18.2 6.6-28.3c0-5.5-.7-10.9-2-16c.7 0 1.3 0 2 0c44.2 0 80 35.8 80 80c0 9.9-1.8 19.4-5.1 28.2zm9.4 130.3C378.8 425.4 350.7 432 320 432c-65.2 0-118.8-29.6-159.9-67.7C121.6 328.5 95 286 81.4 256c8.3-18.4 21.5-41.5 39.4-64.8L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5l-41.9-33zM192 256c0 70.7 57.3 128 128 128c13.3 0 26.1-2 38.2-5.8L302 334c-23.5-5.4-43.1-21.2-53.7-42.3l-56.1-44.2c-.2 2.8-.3 5.6-.3 8.5z"
                         fill="white" />
                 </svg>
             </button>
@@ -194,9 +209,10 @@
             </div>
             <div class="ability-area d-none">
                 <span class="ability-stack ab-1">
-                    <span class="ability-btn">Single piece move</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="20">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(0, event)" class="ability-btn">Single piece move</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="20">pt</span>
+                    <span onclick="showInfo(1)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -208,15 +224,16 @@
                     <span class="desc">حرکت یک مهره (1-5) خانه به جلو و (1-2) خانه به عقب</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-0 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-2">
-                    <span class="ability-btn">Double piece move</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="30">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(1, event)" class="ability-btn">Double piece move</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="30">pt</span>
+                    <span onclick="showInfo(2)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -228,15 +245,16 @@
                     <span class="desc">حرکت دو مهره (1-3) خانه به جلو یا به عقب</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-1 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-3">
-                    <span class="ability-btn">Hit opponent</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="40">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(2, event)" class="ability-btn">Hit opponent</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="40">pt</span>
+                    <span onclick="showInfo(3)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -248,15 +266,16 @@
                     <span class="desc">زدن مهره حریف</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-2 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-4">
-                    <span class="ability-btn">Unpair opponent</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="40">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(3, event)" class="ability-btn">Unpair opponent</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="40">pt</span>
+                    <span onclick="showInfo(4)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -269,15 +288,16 @@
                         مهره دو خانه از مبدا دور می شود)</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-3 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-5">
-                    <span class="ability-btn">Move to my outerboard</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="55">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(4, event)" class="ability-btn">Move to my outerboard</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="55">pt</span>
+                    <span onclick="showInfo(5)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -290,15 +310,16 @@
                         عدم امکان، در خانه شماره 3)</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-4 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-6">
-                    <span class="ability-btn">Un-Thrown out my piece</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="30">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(5, event)" class="ability-btn">Un-Thrown out my piece</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="30">pt</span>
+                    <span onclick="showInfo(6)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -311,15 +332,16 @@
                         عدم امکان برروی خانه شماره 1)</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-5 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-7">
-                    <span class="ability-btn">Un-Bearing off opponent</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="60">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(6, event)" class="ability-btn">Un-Bearing off opponent</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="60">pt</span>
+                    <span onclick="showInfo(7)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -332,15 +354,16 @@
                         برروی مهره های خودی در خانه شماره 2)</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-6 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-8">
-                    <span class="ability-btn">Bearing off my piece</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="value" value="60">pt</span>
-                    <span class="ability-info">
+                    <span onclick="doAbility(7, event)" class="ability-btn">Bearing off my piece</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="60">pt</span>
+                    <span onclick="showInfo(8)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -352,9 +375,9 @@
                     <span class="desc">خارج کردن دورترین مهره از بازی</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="remain-val remain-7 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="value" value="2"></span>
+                                class="cool-val value" value="2"></span>
                     </span>
                 </span>
 
@@ -362,54 +385,80 @@
             <div class="score-area d-none">
                 <span class="score-stack sc-1">
                     <span class="score-btn">Move to my outer-board</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="5">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="5">pt</span>
                 </span>
                 <span class="score-stack sc-2">
                     <span class="score-btn">Move to my home</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="5">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="5">pt</span>
                 </span>
                 <span class="score-stack sc-3">
                     <span class="score-btn">Pair</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="7">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="7">pt</span>
                 </span>
                 <span class="score-stack sc-4">
                     <span class="score-btn">Pair twice in a row</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="10">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="10">pt</span>
                 </span>
                 <span class="score-stack sc-5">
                     <span class="score-btn">Esc 1-2 from op home</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="10">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="10">pt</span>
                 </span>
                 <span class="score-stack sc-6">
                     <span class="score-btn">Hit opponent</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="10">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="10">pt</span>
                 </span>
                 <span class="score-stack sc-7">
                     <span class="score-btn">Hit twice in a row</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="15">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="15">pt</span>
                 </span>
                 <span class="score-stack sc-8">
                     <span class="score-btn">Bearing back immediate</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="5">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="5">pt</span>
                 </span>
                 <span class="score-stack sc-9">
                     <span class="score-btn">Bearing off</span>
-                    <span class="score-point"><input type="text" name="" id="" class="value" value="10">pt</span>
+                    <span class="score-point"><input type="text" name="" id="" class="score-val value"
+                            value="10">pt</span>
                 </span>
 
             </div>
         </div>
         <div class="player-2">
             <span class="player-name">Amirreza</span>
-            <span class="score">250</span>
-            <button class="see btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+            <span class="score2"> <input type="text" name="" value="0" id=""> </span>
+            <button onclick="bluring2()" class="see2">
+                <svg class="cansee2 d-none" xmlns="http://www.w3.org/2000/svg" width="23" height="18"
+                    viewBox="0 0 23 18" fill="none">
                     <path
                         d="M11.7471 1.875C9.2002 1.875 7.10645 3.03125 5.50098 4.51953C3.99707 5.91797 2.95801 7.57812 2.42676 8.75C2.95801 9.92188 3.99707 11.582 5.49707 12.9805C7.10645 14.4687 9.2002 15.625 11.7471 15.625C14.2939 15.625 16.3877 14.4687 17.9932 12.9805C19.4971 11.582 20.5361 9.92188 21.0674 8.75C20.5361 7.57812 19.4971 5.91797 17.9971 4.51953C16.3877 3.03125 14.2939 1.875 11.7471 1.875ZM4.22363 3.14844C6.06348 1.4375 8.59082 0 11.7471 0C14.9033 0 17.4307 1.4375 19.2705 3.14844C21.0986 4.84766 22.3213 6.875 22.9033 8.26953C23.0322 8.57812 23.0322 8.92187 22.9033 9.23047C22.3213 10.625 21.0986 12.6562 19.2705 14.3516C17.4307 16.0625 14.9033 17.5 11.7471 17.5C8.59082 17.5 6.06348 16.0625 4.22363 14.3516C2.39551 12.6562 1.17285 10.625 0.594727 9.23047C0.46582 8.92187 0.46582 8.57812 0.594727 8.26953C1.17285 6.875 2.39551 4.84375 4.22363 3.14844ZM11.7471 11.875C13.4736 11.875 14.8721 10.4766 14.8721 8.75C14.8721 7.02344 13.4736 5.625 11.7471 5.625C11.7197 5.625 11.6963 5.625 11.6689 5.625C11.7197 5.82422 11.7471 6.03516 11.7471 6.25C11.7471 7.62891 10.626 8.75 9.24707 8.75C9.03223 8.75 8.82129 8.72266 8.62207 8.67188C8.62207 8.69922 8.62207 8.72266 8.62207 8.75C8.62207 10.4766 10.0205 11.875 11.7471 11.875ZM11.7471 3.75C13.0732 3.75 14.3449 4.27678 15.2826 5.21447C16.2203 6.15215 16.7471 7.42392 16.7471 8.75C16.7471 10.0761 16.2203 11.3479 15.2826 12.2855C14.3449 13.2232 13.0732 13.75 11.7471 13.75C10.421 13.75 9.14922 13.2232 8.21154 12.2855C7.27385 11.3479 6.74707 10.0761 6.74707 8.75C6.74707 7.42392 7.27385 6.15215 8.21154 5.21447C9.14922 4.27678 10.421 3.75 11.7471 3.75Z"
                         fill="white" />
                 </svg>
+                <svg class="cannotsee2" xmlns="http://www.w3.org/2000/svg" width="23" height="18" fill="none"
+                    viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zm151 118.3C226 97.7 269.5 80 320 80c65.2 0 118.8 29.6 159.9 67.7C518.4 183.5 545 226 558.6 256c-12.6 28-36.6 66.8-70.9 100.9l-53.8-42.2c9.1-17.6 14.2-37.5 14.2-58.7c0-70.7-57.3-128-128-128c-32.2 0-61.7 11.9-84.2 31.5l-46.1-36.1zM394.9 284.2l-81.5-63.9c4.2-8.5 6.6-18.2 6.6-28.3c0-5.5-.7-10.9-2-16c.7 0 1.3 0 2 0c44.2 0 80 35.8 80 80c0 9.9-1.8 19.4-5.1 28.2zm9.4 130.3C378.8 425.4 350.7 432 320 432c-65.2 0-118.8-29.6-159.9-67.7C121.6 328.5 95 286 81.4 256c8.3-18.4 21.5-41.5 39.4-64.8L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5l-41.9-33zM192 256c0 70.7 57.3 128 128 128c13.3 0 26.1-2 38.2-5.8L302 334c-23.5-5.4-43.1-21.2-53.7-42.3l-56.1-44.2c-.2 2.8-.3 5.6-.3 8.5z"
+                        fill="white" />
+                </svg>
             </button>
         </div>
+    </div>
+
+    <div class="cb-modal d-none">
+        <span class="modal-box">
+            <span class="question">Are you sure?</span>
+            <span class="response">
+                <span class="res no">No, return</span>
+                <span class="res yes">Do it!</span>
+            </span>
+        </span>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
