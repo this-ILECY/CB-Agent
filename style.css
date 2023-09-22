@@ -173,6 +173,11 @@ body,
     height: 60vh;
 }
 
+.dice-area {
+    overflow: auto;
+    height: 60vh;
+}
+
 .ability-stack {
     display: grid;
     grid-template-columns: 7fr 2fr 1fr;
@@ -249,7 +254,7 @@ body,
     color: var(--second-green, var(--second-green, #61BE72));
 }
 
-.rules{
+.rules {
     background-color: #007D3D;
     color: #E7F0BF;
     padding: 10px;
@@ -301,7 +306,8 @@ body,
     background: unset;
     border: unset;
 }
-.ability-point>input{
+
+.ability-point>input {
     width: 70%;
 }
 
