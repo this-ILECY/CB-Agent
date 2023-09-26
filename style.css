@@ -154,8 +154,8 @@ body,
     color: var(--white, #FFF);
 }
 
-.dice-1-no,
-.dice-2-no {
+.dice-no-1,
+.dice-no-2 {
     color: var(--main-green, #007D3D);
     font-family: Inter;
     font-size: 30px;
@@ -256,7 +256,8 @@ body,
     color: var(--second-green, var(--second-green, #61BE72));
 }
 
-.rules {
+.rules,
+.add-score {
     background-color: #007D3D;
     color: #E7F0BF;
     padding: 10px;
@@ -265,6 +266,10 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.add-score {
+    font-size: 30px;
 }
 
 .upper-info>.action-info {
@@ -316,11 +321,12 @@ body,
 }
 
 .score>input,
-.score2>input{
+.score2>input {
     font-size: 20px;
 }
 
-.score,.score2{
+.score,
+.score2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,12 +395,22 @@ body,
     border-radius: 10px;
 }
 
-.bluring {
-    background-color: #007D3D;
+.bluring>input {
+    border-radius: 10px;
+    background: #007D3D !important;
+
 }
 
 .disable {
     background-color: gray;
     color: rgb(208, 208, 208);
     ;
+}
+
+.remain-val {
+    width: 40% !important;
+}
+
+.unchecked>svg path {
+    fill: #E7F0BF;
 }

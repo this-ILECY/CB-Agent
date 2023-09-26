@@ -14,18 +14,10 @@
 
     <div class="main-page">
         <div class="actions">
-            <span class="restart">
+            <span class="restart" onclick="restart()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
                     <path
                         d="M47.5781 3.12402C46.9583 3.12402 46.3594 3.36816 45.8926 3.8334L39.9219 9.80469L39.6907 9.52773C35.4199 5.26758 29.8242 3.13477 24.2188 3.13477C12.6074 3.13477 2.35352 12.4277 2.35352 25C2.35352 37.6465 12.6758 46.8652 24.2188 46.8652C34.1895 46.8652 39.9219 40.3799 39.9219 39.916C39.9219 39.298 39.3465 39.1348 39.1399 39.1348C38.2442 39.1348 33.9319 45.2998 24.2181 45.2998C13.1438 45.2998 3.91533 36.3965 3.91533 24.9971C3.91533 13.5225 13.2278 4.77246 24.2376 4.77246C29.4231 4.77246 34.5989 6.7373 38.5345 10.6641L38.8112 10.9977L31.9577 17.8512C31.4911 18.3168 31.247 18.9166 31.247 19.5357C31.1621 20.7324 32.2461 21.875 33.6621 21.875H47.5977C48.8379 21.875 50 20.7129 50 19.4727V5.5332C50 4.14062 48.877 3.12402 47.5781 3.12402ZM48.4375 19.4727C48.4375 19.9316 48.0566 20.3125 47.5977 20.3125H33.6621C32.9453 20.3125 32.8182 19.6364 32.8182 19.4556C32.8182 19.2816 32.8718 19.0702 33.067 18.8751L47.0025 4.93955C47.1978 4.74424 47.4084 4.69082 47.5824 4.69082C47.7637 4.68945 48.4375 4.8125 48.4375 5.5332V19.4727Z"
-                        fill="#007D3D" />
-                </svg>
-            </span>
-            <span onclick="save()" class="save">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                    viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                        d="M429.3 141.3l-90.51-90.51C326.7 38.74310.5 32 293.5 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V186.5C448 169.5 441.3 153.3 429.3 141.3zM80 48h213.5C297.1 48 300.6 48.48 304 49.25V152c0 13.23-10.78 24-24 24h-176C90.78 176 80 165.2 80 152V48zM432 416c0 26.47-21.53 48-48 48H64c-26.47 0-48-21.53-48-48V96c0-26.47 21.53-48 48-48v104C64 174.1 81.94 192 104 192h176C302.1 192 320 174.1 320 152V55.98c2.643 1.758 5.137 3.783 7.432 6.078l90.51 90.51C427 161.6 432 173.7 432 186.5V416zM224 240c-48.53 0-88 39.47-88 88S175.5 416 224 416s88-39.47 88-88S272.5 240 224 240zM224 400c-39.69 0-72-32.3-72-72S184.3 256 224 256s72 32.3 72 72S263.7 400 224 400z"
                         fill="#007D3D" />
                 </svg>
             </span>
@@ -46,7 +38,7 @@
         </div>
         <div class="player-1">
             <span class="player-name">Amirhosein</span>
-            <span class="score"> <input type="text" name="" value="0" id=""> </span>
+            <span class="score"> <input type="text" name="" value="0" id="" onchange="changeScoreManual(1, event)"> </span>
             <button onclick="bluring()" class="see">
                 <svg class="cansee d-none" xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18"
                     fill="none">
@@ -87,8 +79,8 @@
         </div>
         <div class="main">
             <div class="dice-area">
-                <span class="dice-2-btn">Dice 1</span>
-                <span class="chack-1">
+                <span class="dice-btn-start dice-2-btn" onclick="diceClick(1, event)">Dice 1</span>
+                <span class="dice-last-check last-check-1 unchecked" onclick="lastDiceCheck(1, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="31" viewBox="0 0 27 31" fill="none">
                         <g clip-path="url(#clip0_8_225)">
                             <path
@@ -102,9 +94,9 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="dice-1-no">6</span>
-                <span class="dice-2-btn toggle">Dice 2</span>
-                <span class="chack-2">
+                <span class="dice-no dice-no-1">0</span>
+                <span class="dice-btn-start dice-2-btn" onclick="diceClick(2, event)">Dice 2</span>
+                <span class="dice-last-check last-check-2 unchecked" onclick="lastDiceCheck(2, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="31" viewBox="0 0 27 31" fill="none">
                         <g clip-path="url(#clip0_8_225)">
                             <path
@@ -118,8 +110,8 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="dice-2-no">7</span>
-                <span class="num one">
+                <span class="dice-no dice-no-2">0</span>
+                <span class="num num-1 one" onclick="activeNumpad(1, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="51" viewBox="0 0 26 51" fill="none">
                         <g clip-path="url(#clip0_7_188)">
                             <path
@@ -133,7 +125,7 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="num two">
+                <span class="num num-2 two" onclick="activeNumpad(2, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="51" viewBox="0 0 32 51" fill="none">
                         <g clip-path="url(#clip0_7_206)">
                             <path
@@ -147,7 +139,7 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="num three">
+                <span class="num num-3 three" onclick="activeNumpad(3, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="51" viewBox="0 0 32 51" fill="none">
                         <g clip-path="url(#clip0_7_210)">
                             <path
@@ -161,7 +153,7 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="num four">
+                <span class="num num-4 four" onclick="activeNumpad(4, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="51" viewBox="0 0 32 51" fill="none">
                         <g clip-path="url(#clip0_7_215)">
                             <path
@@ -175,7 +167,7 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="num five">
+                <span class="num num-5 five" onclick="activeNumpad(5, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="51" viewBox="0 0 32 51" fill="none">
                         <g clip-path="url(#clip0_7_217)">
                             <path
@@ -189,7 +181,7 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="num six active">
+                <span class="num num-6 six" onclick="activeNumpad(6, event)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="31" height="51" viewBox="0 0 31 51" fill="#007D3D">
                         <g clip-path="url(#clip0_7_219)">
                             <path
@@ -203,15 +195,36 @@
                         </defs>
                     </svg>
                 </span>
-                <span class="rules rule-3">جفت 6 برابر 10 امتیاز</span>
-                <span class="rules rule-2">تاس های جفت 7 امتیاز</span>
+                <span class="add-score" onclick="addScore()">+</span>
+                <span class="rules rule-3">تاس های جفت 7 امتیاز<br/>و<br/>جفت 6 برابر 10 امتیاز</span>
                 <span class="rules rule-1">با هر بار انداختن تاس: مجموع تاسها تقسیم بر دو، رو به بالا</span>
             </div>
             <div class="ability-area d-none">
-                <span class="ability-stack ab-1">
-                    <span onclick="doAbility(0, event)" class="ability-btn">Single piece move</span>
+                <span class="ability-stack ab-0">
+                    <span onclick="doAbility(0, event)" class="ability-btn false">Single piece move</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
                             value="20">pt</span>
+                    <span onclick="showInfo(0)" class="ability-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
+                            <path
+                                d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
+                                fill="#007D3D" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="upper-info d-none ab-0">
+                    <span class="desc">حرکت یک مهره (1-5) خانه به جلو و (1-2) خانه به عقب</span>
+                    <span class="action-info">
+                        <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
+                                class="remain-val remain-0 value" value="2"></span>
+                        <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
+                                class="cool-val value" value="2"></span>
+                    </span>
+                </span>
+                <span class="ability-stack ab-1">
+                    <span onclick="doAbility(1, event)" class="ability-btn false">Double piece move</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="30">pt</span>
                     <span onclick="showInfo(1)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
@@ -221,18 +234,18 @@
                     </span>
                 </span>
                 <span class="upper-info d-none ab-1">
-                    <span class="desc">حرکت یک مهره (1-5) خانه به جلو و (1-2) خانه به عقب</span>
+                    <span class="desc">حرکت دو مهره (1-3) خانه به جلو یا به عقب</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="remain-val remain-0 value" value="2"></span>
+                                class="remain-val remain-1 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
                                 class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-2">
-                    <span onclick="doAbility(1, event)" class="ability-btn">Double piece move</span>
+                    <span onclick="doAbility(2, event)" class="ability-btn false">Hit opponent</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
-                            value="30">pt</span>
+                            value="40">pt</span>
                     <span onclick="showInfo(2)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
@@ -242,16 +255,16 @@
                     </span>
                 </span>
                 <span class="upper-info d-none ab-2">
-                    <span class="desc">حرکت دو مهره (1-3) خانه به جلو یا به عقب</span>
+                    <span class="desc">زدن مهره حریف</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="remain-val remain-1 value" value="2"></span>
+                                class="remain-val remain-2 value" value="2"></span>
                         <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
                                 class="cool-val value" value="2"></span>
                     </span>
                 </span>
                 <span class="ability-stack ab-3">
-                    <span onclick="doAbility(2, event)" class="ability-btn">Hit opponent</span>
+                    <span onclick="doAbility(3, event)" class="ability-btn false">Unpair opponent</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
                             value="40">pt</span>
                     <span onclick="showInfo(3)" class="ability-info">
@@ -263,27 +276,6 @@
                     </span>
                 </span>
                 <span class="upper-info d-none ab-3">
-                    <span class="desc">زدن مهره حریف</span>
-                    <span class="action-info">
-                        <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="remain-val remain-2 value" value="2"></span>
-                        <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="cool-val value" value="2"></span>
-                    </span>
-                </span>
-                <span class="ability-stack ab-4">
-                    <span onclick="doAbility(3, event)" class="ability-btn">Unpair opponent</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
-                            value="40">pt</span>
-                    <span onclick="showInfo(4)" class="ability-info">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
-                            <path
-                                d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
-                                fill="#007D3D" />
-                        </svg>
-                    </span>
-                </span>
-                <span class="upper-info d-none ab-4">
                     <span class="desc">تک کردن دو مهره حریف که جفت هستند (با اختلاف 4 خانه از یکدیگر دور می شوند. هر
                         مهره دو خانه از مبدا دور می شود)</span>
                     <span class="action-info">
@@ -293,11 +285,11 @@
                                 class="cool-val value" value="2"></span>
                     </span>
                 </span>
-                <span class="ability-stack ab-5">
-                    <span onclick="doAbility(4, event)" class="ability-btn">Move to my outerboard</span>
+                <span class="ability-stack ab-4">
+                    <span onclick="doAbility(4, event)" class="ability-btn false">Move to my outerboard</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
                             value="55">pt</span>
-                    <span onclick="showInfo(5)" class="ability-info">
+                    <span onclick="showInfo(4)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -305,7 +297,7 @@
                         </svg>
                     </span>
                 </span>
-                <span class="upper-info d-none ab-5">
+                <span class="upper-info d-none ab-4">
                     <span class="desc">بردن یک مهره به اتر برد خود (بر روی نزدیک ترین مهره خود به خانه حریف و در صورت
                         عدم امکان، در خانه شماره 3)</span>
                     <span class="action-info">
@@ -315,11 +307,11 @@
                                 class="cool-val value" value="2"></span>
                     </span>
                 </span>
-                <span class="ability-stack ab-6">
-                    <span onclick="doAbility(5, event)" class="ability-btn">Un-Thrown out my piece</span>
+                <span class="ability-stack ab-5">
+                    <span onclick="doAbility(5, event)" class="ability-btn false">Un-Thrown out my piece</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
                             value="30">pt</span>
-                    <span onclick="showInfo(6)" class="ability-info">
+                    <span onclick="showInfo(5)" class="ability-info">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
                             <path
                                 d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
@@ -327,7 +319,7 @@
                         </svg>
                     </span>
                 </span>
-                <span class="upper-info d-none ab-6">
+                <span class="upper-info d-none ab-5">
                     <span class="desc">بازگرداندن مهره زده شده به بازی (بر روی دورترین مهره خود در خانه حریف و در صورت
                         عدم امکان برروی خانه شماره 1)</span>
                     <span class="action-info">
@@ -337,8 +329,30 @@
                                 class="cool-val value" value="2"></span>
                     </span>
                 </span>
+                <span class="ability-stack ab-6">
+                    <span onclick="doAbility(6, event)" class="ability-btn false">Un-Bearing off opponent</span>
+                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
+                            value="60">pt</span>
+                    <span onclick="showInfo(6)" class="ability-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
+                            <path
+                                d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
+                                fill="#007D3D" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="upper-info d-none ab-6">
+                    <span class="desc">بازگرداندن مهره حریف به بازی(یکی از ستون های خانه خود و در صورت عدم امکان، گذاشتن
+                        برروی مهره های خودی در خانه شماره 2)</span>
+                    <span class="action-info">
+                        <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
+                                class="remain-val remain-6 value" value="2"></span>
+                        <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
+                                class="cool-val value" value="2"></span>
+                    </span>
+                </span>
                 <span class="ability-stack ab-7">
-                    <span onclick="doAbility(6, event)" class="ability-btn">Un-Bearing off opponent</span>
+                    <span onclick="doAbility(7, event)" class="ability-btn false">Bearing off my piece</span>
                     <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
                             value="60">pt</span>
                     <span onclick="showInfo(7)" class="ability-info">
@@ -350,28 +364,6 @@
                     </span>
                 </span>
                 <span class="upper-info d-none ab-7">
-                    <span class="desc">بازگرداندن مهره حریف به بازی(یکی از ستون های خانه خود و در صورت عدم امکان، گذاشتن
-                        برروی مهره های خودی در خانه شماره 2)</span>
-                    <span class="action-info">
-                        <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
-                                class="remain-val remain-6 value" value="2"></span>
-                        <span class="cool-down"><span class="title">CoolDown:</span> <input type="text" name="" id=""
-                                class="cool-val value" value="2"></span>
-                    </span>
-                </span>
-                <span class="ability-stack ab-8">
-                    <span onclick="doAbility(7, event)" class="ability-btn">Bearing off my piece</span>
-                    <span class="ability-point"><input type="text" name="" id="" class="ability-val value"
-                            value="60">pt</span>
-                    <span onclick="showInfo(8)" class="ability-info">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="25" viewBox="0 0 11 25" fill="none">
-                            <path
-                                d="M10.5715 23.6429H6.28578V9.5C6.28578 9.26396 6.09325 9.07196 5.85721 9.07196L2.85721 9.07143C2.62096 9.07143 2.42864 9.26429 2.42864 9.5C2.42864 9.73571 2.62096 9.92857 2.85721 9.92857H5.42864V23.6429H1.14293C0.906891 23.6429 0.714355 23.8357 0.714355 24.0714C0.714355 24.3071 0.906891 24.5 1.14293 24.5H10.5715C10.8075 24.5 11.0001 24.3075 11.0001 24.0714C11.0001 23.8354 10.8072 23.6429 10.5715 23.6429ZM5.00007 5.64286C6.41971 5.64286 7.5715 4.49107 7.5715 3.07143C7.5715 1.65179 6.41971 0.5 5.00007 0.5C3.58043 0.5 2.42864 1.65125 2.42864 3.07143C2.42864 4.49161 3.57989 5.64286 5.00007 5.64286ZM5.00007 1.35714C5.94507 1.35714 6.71436 2.12643 6.71436 3.07143C6.71436 4.01643 5.94507 4.78571 5.00007 4.78571C4.05507 4.78571 3.28578 4.01696 3.28578 3.07196C3.28578 2.12696 4.05507 1.35714 5.00007 1.35714Z"
-                                fill="#007D3D" />
-                        </svg>
-                    </span>
-                </span>
-                <span class="upper-info d-none ab-8">
                     <span class="desc">خارج کردن دورترین مهره از بازی</span>
                     <span class="action-info">
                         <span class="remains"><span class="title">Remains:</span> <input type="text" name="" id=""
@@ -384,47 +376,47 @@
             </div>
             <div class="score-area d-none">
                 <span class="score-stack sc-1">
-                    <span class="score-btn">Move to my outer-board</span>
+                    <span class="score-btn" onclick="gainScore(1)">Move to my outer-board</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="5">pt</span>
                 </span>
                 <span class="score-stack sc-2">
-                    <span class="score-btn">Move to my home</span>
+                    <span class="score-btn" onclick="gainScore(2)">Move to my home</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="5">pt</span>
                 </span>
                 <span class="score-stack sc-3">
-                    <span class="score-btn">Pair</span>
+                    <span class="score-btn" onclick="gainScore(3)">Pair</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="7">pt</span>
                 </span>
                 <span class="score-stack sc-4">
-                    <span class="score-btn">Pair twice in a row</span>
+                    <span class="score-btn" onclick="gainScore(4)">Pair twice in a row</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="10">pt</span>
                 </span>
                 <span class="score-stack sc-5">
-                    <span class="score-btn">Esc 1-2 from op home</span>
+                    <span class="score-btn" onclick="gainScore(5)">Esc 1-2 from op home</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="10">pt</span>
                 </span>
                 <span class="score-stack sc-6">
-                    <span class="score-btn">Hit opponent</span>
+                    <span class="score-btn" onclick="gainScore(6)">Hit opponent</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="10">pt</span>
                 </span>
                 <span class="score-stack sc-7">
-                    <span class="score-btn">Hit twice in a row</span>
+                    <span class="score-btn" onclick="gainScore(7)">Hit twice in a row</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="15">pt</span>
                 </span>
                 <span class="score-stack sc-8">
-                    <span class="score-btn">Bearing back immediate</span>
+                    <span class="score-btn" onclick="gainScore(8)">Bearing back immediate</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="5">pt</span>
                 </span>
                 <span class="score-stack sc-9">
-                    <span class="score-btn">Bearing off</span>
+                    <span class="score-btn" onclick="gainScore(9)">Bearing off</span>
                     <span class="score-point"><input type="text" name="" id="" class="score-val value"
                             value="10">pt</span>
                 </span>
@@ -433,7 +425,7 @@
         </div>
         <div class="player-2">
             <span class="player-name">Amirreza</span>
-            <span class="score2"> <input type="text" name="" value="0" id=""> </span>
+            <span class="score2"> <input type="text" name="" value="0" id="" onchange="changeScoreManual(2, event)"> </span>
             <button onclick="bluring2()" class="see2">
                 <svg class="cansee2 d-none" xmlns="http://www.w3.org/2000/svg" width="23" height="18"
                     viewBox="0 0 23 18" fill="none">
