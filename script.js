@@ -4,7 +4,7 @@ const base_data =
     ability: [20, 30, 40, 40, 55, 30, 60, 60],
     point: [5, 5, 7, 10, 10, 10, 15, 5, 10],
     cooldowns: [0, 0, 0, 0, 0, 0, 0, 0],
-    originalCooldowns: [2, 2, 2, 2, 2, 2, 1, 1],
+    originalCooldowns: [3, 3, 3, 3, 3, 3, 2, 2],
     remain: [900, 900, 900, 900, 900, 2, 2, 3],
     score: 0,
     isUsed: [false, false, false, false, false, false, false, false]
