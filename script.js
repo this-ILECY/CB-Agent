@@ -6,7 +6,7 @@ const base_data =
     cooldowns: [0, 0, 0, 0, 0, 0, 0, 0],
     originalCooldowns: [3, 3, 3, 3, 3, 3, 2, 2],
     remain: [900, 900, 900, 900, 900, 2, 2, 3],
-    score: 0,
+    score: 10,
     isUsed: [false, false, false, false, false, false, false, false]
 };
 
